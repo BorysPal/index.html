@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona główna</title>
+
+   
+    
+    <link rel="stylesheet" href="style/layout.css">
+    <link rel="stylesheet" href="style/menuPionowe.css">
+    <link rel="stylesheet" href="style/form.css">
+
+</head>
+<body>
+    <header style="background-color: #107910; color: white;" > 
+        <h1>Centrum Rekreacyjno-sportowe w Poznaniu</h1> 
+    </header>
+    <nav>
+        <h2>Menu</h2>
+        <ul>
+            <li> <a href="index.html"> Strona główna </a> </li> 
+        
+        <li><a href="O_nas.html">O nas</a></li> 
+        
+        <li><a href="pilka.html">Piłka nozna</a></li> 
+
+        <li><a href="kosz.html">Koszykówka</a></li> 
+
+        <li><a href="siata.html">Siatkówka</a></li> 
+
+        <li><a href="silownia.html">Siłownia</a></li> 
+
+        <li><a href="plywanie.html">Pływanie</a></li> 
+
+        <li><a href="kregle.html">Kręgle</a></li> 
+        
+        <li><a href="harmonogram.html">Harmonogram</a></li> 
+        
+        <li><a href="formularz.html">Formularz do zapisu</a></li> 
+        
+        <li><a href="kalorie.html">Policz swoje BMI</a></li> 
+        
+        <li><a href="obiekt.html">Zdjęcia obiektu</a></li> 
+        
+        <li><a href="obraz.html">Narysuj swój portret</a></li> 
+
+        </ul>
+    </nav>
+    <article>
+     <h2>Zdjęcia obiektu</h2>
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 7</div>
+                <div class="text"></div>
+                <figure id="zdjecie">
+                    <img src="images/budynek.jpeg" alt="Na rysunku przedstawiono marginesy w CSS">
+                    <figcaption>
+                        Główny budynek
+                    </figcaption> 
+                </figure>
+            </div>
+        
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 7</div>
+                <div class="text"></div>
+                <figure id="zdjecie">
+                    <img src="images/basen.jpeg" alt="Na rysunku przedstawiono marginesy w CSS">
+                    <figcaption>
+                        Basen
+                    </figcaption> 
+                </figure>
+            </div>
+        
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 7</div>
+                <div class="text"></div>
+                <figure id="zdjecie">
+                    <img src="images/silownia.jpeg" alt="Na rysunku przedstawiono marginesy w CSS">
+                    <figcaption>
+                        Siłownia
+                    </figcaption> 
+                </figure>
+            </div>
+        
+            <div class="mySlides fade">
+                <div class="numbertext">4 / 7</div>
+                <div class="text"></div>
+                <figure id="zdjecie">
+                    <img src="images/kregle.jpeg" alt="Na rysunku przedstawiono marginesy w CSS">
+                    <figcaption>
+                        Kręgielnia
+                    </figcaption> 
+                </figure>
+            </div>
+        
+            <div class="mySlides fade">
+                <div class="numbertext">5 / 7</div>
+                <div class="text"></div>
+                <figure id="zdjecie">
+                    <img src="images/noga.jpeg" alt="Na rysunku przedstawiono marginesy w CSS">
+                    <figcaption>
+                        Boisko do piłki noznej
+                    </figcaption> 
+                </figure>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">6 / 7</div>
+                <div class="text"></div>
+                <figure id="zdjecie">
+                    <img src="images/siata.jpeg" alt="Na rysunku przedstawiono marginesy w CSS">
+                    <figcaption>
+                        Boisko do siatkówki
+                    </figcaption> 
+                </figure>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">7 / 7</div>
+                <div class="text"></div>
+                <figure id="zdjecie">
+                    <img src="images/kosz.jpeg" alt="Na rysunku przedstawiono marginesy w CSS">
+                    <figcaption>
+                        Boisko do koszykówki
+                    </figcaption> 
+                </figure>
+            </div>
+        
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+        
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+        
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+        
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+        
+            function showSlides(n) {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("dot");
+                if (n > slides.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";  
+                dots[slideIndex-1].className += " active";
+            }
+        </script>
+    
+    </article>
+    <aside>
+       
+        <iframe src="Zegaritd.html"></iframe> 
+    </aside>
+    <footer> 
+        autor: Borys Paliwoda <hr> 
+        Projekt wykonany w ramach zaliczenia przedmiotu MO: TLiSKwE na kierunku Energetyka <br> 
+        </footer> 
+  
+    
+</body>
+</html>

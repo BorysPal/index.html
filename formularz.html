@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz</title>
+    <link rel="stylesheet" href="style/layout.css">
+    <link rel="stylesheet" href="style/menuPionowe.css">
+    <link rel="stylesheet" href="style/form.css">
+</head>
+<body>
+    <header style="background-color: #107910; color: white;" >
+        <h1>Centrum Rekreacyjno-sportowe w Poznaniu</h1> 
+    </header>
+    <nav>
+        <h2>Menu</h2>
+        <ul>
+            <li> <a href="index.html"> Strona główna </a> </li> 
+        
+            <li><a href="O_nas.html">O nas</a></li> 
+            
+            <li><a href="pilka.html">Piłka nozna</a></li> 
+    
+            <li><a href="kosz.html">Koszykówka</a></li> 
+    
+            <li><a href="siata.html">Siatkówka</a></li> 
+    
+            <li><a href="silownia.html">Siłownia</a></li> 
+    
+            <li><a href="plywanie.html">Pływanie</a></li> 
+    
+            <li><a href="kregle.html">Kręgle</a></li> 
+            
+            <li><a href="harmonogram.html">Harmonogram</a></li> 
+            
+            <li><a href="formularz.html">Formularz do zapisu</a></li> 
+            
+            <li><a href="kalorie.html">Policz swoje BMI</a></li> 
+            
+            <li><a href="obiekt.html">Zdjęcia obiektu</a></li> 
+            
+            <li><a href="obraz.html">Narysuj swój portret</a></li> 
+
+        </ul>
+    </nav>
+    <article>
+        <h2>Formularz dla klientów chętnych na zapisanie się do sekcji</h2>
+        <form action="" method="post">
+            <p>
+                Proszę wypełnić ten formularz. <br>
+                Pola oznaczone <em>*</em> są obowiązkowe!
+            </p>
+            <fieldset>
+                <legend>Dane kontaktowe</legend>
+                <label for="imie">Imie<em>*</em> </label>
+                <input type="text" name="imie" id="imie" required autofocus ><br>
+                <label for="nazw">Nazwisko<em>*</em> </label>
+                <input type="text" name="nazw" id="nazw" required><br>
+                <label for="tele">Telefon<em>*</em> </label>
+                <input type="tel" name="tele" id="tele" required placeholder="(+48) xxx-xxx-xxx"><br>
+                <label for="mail">Mail<em>*</em> </label>
+                <input type="email" name="mail" id="mail" required placeholder="imie.nazwisko@example.com"><br>
+
+            </fieldset>
+            <fieldset><legend>Szczegółowe dane osobowe</legend>
+                <label for="waga">Waga</label>
+                <input type="number" name="waga" id="waga" 
+                min="0" max="120" step="0.5"><br>
+
+                <label for="Wzrost">Wzrost</label>
+                <input type="range" name="Wzrost" id="Wzrost" 
+                min="0" max="240" step="40" value="180"> (0-240)[cm] <br>
+
+                <label for="pleć">Płeć</label>
+                <select name="pleć" id="pleć">
+                    <option value="kobieta">Kobieta</option>
+                    <option value="mężczyzna">Mężczyzna</option>
+                    <option value="nie podaję" selected>nie podaję</option>
+                </select><br>
+                <label for="dataUr">Data urodzenia</label>
+                <input type="date" name="dataUr" id="dataUr"><br>
+            </fieldset>
+
+            <fieldset><legend>Sekcja</legend>
+                <label for="html">Piłka nozna</label>
+                <input type="checkbox" name="sekcja" id="pilka"><br>
+                <label for="css">Koszykówka</label>
+                <input type="checkbox" name="sekcja" id="kosz"><br>
+                <label for="css">Siatkówka</label>
+                <input type="checkbox" name="sekcja" id="siatka"><br>
+                <label for="css">Pływanie</label>
+                <input type="checkbox" name="sekcja" id="plywanie"><br>
+                <label for="css">Siłownia</label>
+                <input type="checkbox" name="sekcja" id="silka"><br>
+                <label for="css">Kręgle</label>
+                <input type="checkbox" name="sekcja" id="kregle"><br>
+            </fieldset>
+            <fieldset><legend>Przedział wiekowy</legend>
+                <input type="radio" name="przed_wiek" id="" value="0-18"> 0-18 <br>
+                <input type="radio" name="przed_wiek" id="" checked> 19-30 <br>
+                <input type="radio" name="przed_wiek" id=""> 31-50 <br>
+                <input type="radio" name="przed_wiek" id=""> 51-70 <br>
+                <input type="radio" name="przed_wiek" id=""> więcej <br>
+            </fieldset>
+            <fieldset><legend>Poziom zaawansowania</legend>
+                <input type="text" list="poziom">
+                <datalist id="poziom">
+                    <option value="Amator"></option>
+                    <option value="Semi-pro"></option>
+                    <option value="Zawodowiec"></option>
+                </datalist>
+            </fieldset>
+
+            <fieldset><legend>Dodatkowe informacje</legend>
+                <textarea name="Info" id="" cols="30" rows="10"
+                placeholder="Napisz coś o sobie"></textarea>
+                <br>
+                <input type="file" name="plik" id="">
+            </fieldset>
+
+            <input type="submit" value="Wyślij">
+            <input type="reset" value="Kasuj formularz">
+        </form>
+    </article>
+    <aside>
+     
+        <iframe src="Zegaritd.html" frameborder="0"></iframe>
+    </aside>
+    <footer> 
+        autor: Borys Paliwoda <hr> 
+        Projekt wykonany w ramach zaliczenia przedmiotu MO: TLiSKwE na kierunku Energetyka <br> 
+        </footer> 
+  
+    
+</body>
+</html>

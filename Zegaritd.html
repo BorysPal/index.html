@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zegaritd</title>
+    <style>
+        div.unpressed{
+            width: 180px;
+            height: 40px;
+            background-image: url("images/unpressed.png");
+            background-repeat: no-repeat;
+            text-align: center;
+            padding-top: 10px;
+            font-weight: bold;
+            color: darkblue;
+        }
+        div.pressed{
+            width: 180px;
+            height: 40px;
+            background-image: url("images/pressed.png");
+            background-repeat: no-repeat;
+            text-align: center;
+            padding-top: 10px;
+            font-weight: bold;
+            color: lightblue;
+        }
+        #txtRtext{
+            font-family: monospace;
+        }
+
+    </style>
+  
+  
+</head>
+<body style="color: white;">
+    <div class="clock">
+        <h3>Aktualna godzina i data</h3>
+        <p id="current-time"></p>
+        <p id="current-data"></p>
+    </div>
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+            const day = now.getDate();
+            const month = now.getMonth() + 1;
+            const year = now.getFullYear();
+            const formattedTime = `${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            const formattedDate = `${day < 10 ? '0' : ''}${day}/${month < 10 ? '0' : ''}${month}/${year}`;
+            document.getElementById('current-time').textContent = `Godzina: ${formattedTime}`;
+            document.getElementById('current-data').textContent =  `Data: ${formattedDate}`;
+        }
+
+        setInterval(updateTime, 1000);
+
+        window.onload = updateTime;
+    </script>
+   
+    <div class="counter">
+        <h3>Licznik odwiedzin</h3>
+        <p>Odwiedziłeś tę stronę <span id="visit-count">0</span> razy.</p>
+    </div>
+    <script>
+        function updateVisitCount() {
+            if(localStorage.getItem('visitCount') === null) {
+                localStorage.setItem('visitCount', 1);
+            }
+            let visitCount = localStorage.getItem('visitCount');
+            document.getElementById('visit-count').textContent = visitCount;
+        }
+
+        window.onload = updateVisitCount;
+    </script>
+<div class="timer">
+<h3>Czas na stronie</h3>
+<p>Spędziłeś na tej stronie <span id="time-spent">0</span> sekund.</p>
+</div>
+<script>
+function getSessionStartTime() {
+    let sessionStartTime = localStorage.getItem('sessionStartTime');
+    if (!sessionStartTime) {
+        sessionStartTime = new Date().getTime();
+        localStorage.setItem('sessionStartTime', sessionStartTime);
+    }
+    return parseInt(sessionStartTime);
+}
+function updateTimeSpent() {
+    const now = new Date().getTime();
+    const sessionStartTime = getSessionStartTime();
+    const timeSpent = Math.floor((now - sessionStartTime) / 1000);
+    document.getElementById('time-spent').textContent = timeSpent;
+}
+
+setInterval(updateTimeSpent, 1000);
+
+window.addEventListener('beforeunload', function() {
+    const now = new Date().getTime();
+    const sessionStartTime = getSessionStartTime();
+    const totalTimeSpent = Math.floor((now - sessionStartTime) / 1000);
+    alert(`Spędziłeś na tej stronie ${totalTimeSpent} sekund.`);
+});
+
+document.addEventListener('DOMContentLoaded', updateTimeSpent);
+</script>
+</body>
+</html>

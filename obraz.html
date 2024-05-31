@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona główna</title>
+
+    <style>
+        
+       
+        canvas{
+            background-color: white;
+            border: 1px dotted black;
+        }
+        input{font-size: 20px;}
+       
+    </style>
+    <link rel="stylesheet" href="style/layout.css">
+    <link rel="stylesheet" href="style/menuPionowe.css">
+    <link rel="stylesheet" href="style/form.css">
+    <script>
+        let can, cont;
+        window.onload= function(){
+            can=document.querySelector("canvas");
+        }
+
+        function twarz() {
+            if (cont==null) {
+                cont=can.getContext("2d");
+            }
+        
+            cont.beginPath();
+            cont.arc(250,150,120,0,2*Math.PI);
+            
+            cont.fillStyle= '#FFDAB9';
+            cont.fill();
+            cont.stroke();
+         
+            
+        }
+
+        function leweoko() {
+            if (cont==null) {
+                cont=can.getContext("2d");
+            }
+            cont.beginPath();
+           
+            cont.arc(200,100,20,0,2*Math.PI);
+            
+            cont.fillStyle= '#FFFFFF';
+            cont.fill();
+            cont.stroke();
+           
+
+            cont.beginPath();
+         
+            cont.arc(200,100,10,0,2*Math.PI);
+           
+            cont.fillStyle= '#000000';
+            cont.fill();
+            cont.stroke();
+           
+        }
+
+        function praweoko() {
+            if (cont==null) {
+                cont=can.getContext("2d");
+            }
+            cont.beginPath();
+           
+           cont.arc(300,100,20,0,2*Math.PI);
+           
+           cont.fillStyle= '#FFFFFF';
+           cont.fill();
+           cont.stroke();
+          
+
+           cont.beginPath();
+        
+           cont.arc(300,100,10,0,2*Math.PI);
+          
+           cont.fillStyle= '#000000';
+           cont.fill();
+           cont.stroke();
+          
+        }
+
+        function nos() {
+            if (cont==null) {
+                cont=can.getContext("2d");
+            }
+            cont.beginPath();
+            cont.moveTo(250, 120);
+            cont.lineTo(270, 170);
+            cont.lineTo(230, 170);
+            cont.closePath();
+            cont.stroke();
+        }
+        function usta(){ 
+            if (cont==null) {
+                cont=can.getContext("2d");
+            }
+            cont.beginPath();
+            cont.arc(250, 200, 50, 0, Math.PI, false);
+            cont.stroke();
+         }
+        function czysc() {
+            cont.clearRect(0,0,can.width,can.height);
+        }
+
+
+    </script>
+</head>
+<body>
+    <header style="background-color: #107910; color: white;" > 
+        <h1>Centrum Rekreacyjno-sportowe w Poznaniu</h1> 
+    </header>
+    <nav>
+        <h2>Menu</h2>
+        
+            <ul>
+                <li> <a href="index.html"> Strona główna </a> </li> 
+            
+                <li><a href="O_nas.html">O nas</a></li> 
+                
+                <li><a href="pilka.html">Piłka nozna</a></li> 
+        
+                <li><a href="kosz.html">Koszykówka</a></li> 
+        
+                <li><a href="siata.html">Siatkówka</a></li> 
+        
+                <li><a href="silownia.html">Siłownia</a></li> 
+        
+                <li><a href="plywanie.html">Pływanie</a></li> 
+        
+                <li><a href="kregle.html">Kręgle</a></li> 
+                
+                <li><a href="harmonogram.html">Harmonogram</a></li> 
+                
+                <li><a href="formularz.html">Formularz do zapisu</a></li> 
+                
+                <li><a href="kalorie.html">Policz swoje BMI</a></li> 
+                
+                <li><a href="obiekt.html">Zdjęcia obiektu</a></li> 
+                
+                <li><a href="obraz.html">Narysuj swój portret</a></li> 
+    
+            </ul>
+
+        
+    </nav>
+    <article>
+   <h2>
+    Narysuj swój portret!
+   </h2>
+        <input type="button" value="Rysuj twarz" onclick="twarz()">
+        <input type="button" value="Rysuj lewe oko" onclick="leweoko()">
+        <input type="button" value="Rysuj prawe oko" onclick="praweoko()">
+        <input type="button" value="Rysuj nos" onclick="nos()">
+        <input type="button" value="Rysuj usta" onclick="usta()">
+        <input type="button" value="Czyść" onclick="czysc()">
+
+        <canvas width="500" height="300"></canvas>
+
+   
+    </article>
+    <aside>
+   
+        <iframe src="Zegaritd.html"></iframe> 
+    </aside>
+    <footer> 
+        autor: Borys Paliwoda <hr> 
+        Projekt wykonany w ramach zaliczenia przedmiotu MO: TLiSKwE na kierunku Energetyka <br> 
+        </footer> 
+  
+    
+</body>
+</html>

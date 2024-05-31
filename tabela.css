@@ -1,0 +1,30 @@
+table, th{
+    border: 1px solid rgb(145, 164, 51);
+    background-color: rgb(47, 143, 68);
+    color: white;
+    font-family:Arial;
+    
+}
+td{
+    border: 1px solid rgb(145, 164, 51);
+    background-color: rgb(47, 143, 68);
+    color: white;
+    font-family: Arial;
+    text-align: center;
+    padding: 5px;
+    font-size: small;
+}
+table, tr, td, th{
+   border-spacing: 0px;
+}
+.otwarte{
+    background-color: rgb(47, 143, 68);
+    color: white;
+}
+
+.nieczynne{
+    background-color: rgb(47, 143, 68);
+}
+.godziny th{
+    width: 20px;
+}
